@@ -2,6 +2,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import logoUrl from "../assets/logo.jpeg";
 
 export default function Layout() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,9 +39,9 @@ export default function Layout() {
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-navy-900 uppercase flex items-center gap-2">
-            <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-            Vitalis
+          <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-navy-900 uppercase flex items-center gap-4">
+            <img src={logoUrl} alt="Innergy Care" className="h-10 w-auto rounded-md" />
+            Innergy Care
           </Link>
 
           {/* Desktop Nav */}
@@ -106,9 +107,9 @@ export default function Layout() {
       <footer className="bg-navy-900 text-white py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-white uppercase mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-              Vitalis
+            <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-white uppercase mb-6 flex items-center gap-4">
+              <img src={logoUrl} alt="Innergy Care" className="h-10 w-auto bg-white rounded-md p-1" />
+              Innergy Care
             </Link>
             <p className="text-gray-400 max-w-sm text-sm leading-relaxed font-light">
               Advanced care meets how you actually want to feel. Reclaim your strength and optimize your health through a personalized, science-driven approach.
@@ -132,13 +133,13 @@ export default function Layout() {
               <li>123 Wellness Avenue</li>
               <li>Suite 400</li>
               <li>New York, NY 10001</li>
-              <li className="mt-2">hello@aethelclinic.com</li>
+              <li className="mt-2">Innergyhealth1@gmail.com</li>
               <li>+1 (555) 123-4567</li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {new Date().getFullYear()} Aethel Clinic. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Innergy Care. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>

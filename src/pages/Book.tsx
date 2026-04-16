@@ -13,7 +13,7 @@ export default function Book() {
           Please contact us directly to schedule your comprehensive consultation.
         </p>
         <div className="space-y-4 text-left border-t border-gray-100 pt-8">
-          <p className="text-navy-900 font-medium">Email: <a href="mailto:hello@aethelclinic.com" className="text-sage-600 hover:text-sage-500">hello@aethelclinic.com</a></p>
+          <p className="text-navy-900 font-medium">Email: <a href="mailto:Innergyhealth1@gmail.com" className="text-sage-600 hover:text-sage-500">Innergyhealth1@gmail.com</a></p>
           <p className="text-navy-900 font-medium">Phone: <a href="tel:+15551234567" className="text-sage-600 hover:text-sage-500">+1 (555) 123-4567</a></p>
         </div>
       </motion.div>
