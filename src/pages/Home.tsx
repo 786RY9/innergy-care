@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Brain, HeartPulse, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
+import heroImg from "../assets/image1.jpeg";
+import approachImg from "../assets/image2.jpg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,9 +29,9 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -39,15 +41,15 @@ export default function Home() {
               <Sparkles size={16} className="text-gold-500" />
               <span className="text-xs font-medium uppercase tracking-[2px] text-navy-700">Premium Longevity Clinic</span>
             </motion.div>
-            
+
             <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-[64px] font-serif text-navy-900 leading-[1.1] mb-6">
               Advanced Care Meets How You <span className="italic text-sage-600">Actually</span> Want to Feel.
             </motion.h1>
-            
+
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-navy-700 leading-[1.6] max-w-[520px] mb-10 font-light">
               Living longer should also mean living better. Reclaim your strength and optimize your health through a personalized, science-driven approach.
             </motion.p>
-            
+
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5">
               <Link
                 to="/book"
@@ -67,27 +69,25 @@ export default function Home() {
           </motion.div>
 
           {/* Right Image Composition */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-6 relative h-[500px] lg:h-[700px] w-full mt-10 lg:mt-0"
           >
-            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-              <motion.img 
-                initial={{ scale: 1.1 }}
+            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-white">
+              <motion.img
+                initial={{ scale: 1.05 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 2, ease: "easeOut" }}
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Luxury wellness treatment"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                src={heroImg}
+                alt="Premium wellness treatment"
+                className="w-full h-full object-contain p-4"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent mix-blend-multiply" />
             </div>
-            
+
             {/* Floating Element */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 1.5, ease: "easeInOut" }}
@@ -123,7 +123,7 @@ export default function Home() {
             <div className="w-16 h-px bg-gold-500 mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -139,7 +139,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -155,7 +155,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -177,23 +177,26 @@ export default function Home() {
       {/* Split Content Block */}
       <section className="py-24 px-6 md:px-12 bg-navy-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
-            <img
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Doctor consulting with patient"
+            <motion.img
+              initial={{ scale: 1.05 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              src={approachImg}
+              alt="Proactive Health Consultation"
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-navy-900/30 mix-blend-multiply"></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -208,7 +211,7 @@ export default function Home() {
               Proactive Health for the Future.
             </h2>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light">
-              Instead of just treating illness, we focus on prevention—empowering the body to function at its highest potential. 
+              Instead of just treating illness, we focus on prevention—empowering the body to function at its highest potential.
             </p>
             <p className="text-lg text-gray-300 mb-10 leading-relaxed font-light">
               Our goal is to help you feel better today while reducing your risk of chronic disease tomorrow. We bridge the gap between advanced medical science and daily wellbeing.

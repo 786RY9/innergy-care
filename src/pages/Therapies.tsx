@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import ctaImg from "../assets/image1.jpeg";
 import { ArrowRight, Dna, Zap, FlaskConical, Apple } from "lucide-react";
 
 export default function Therapies() {
@@ -79,14 +80,27 @@ export default function Therapies() {
       </section>
 
       {/* Bottom Call-to-Action Banner */}
-      <section className="px-6 md:px-12 pb-24">
-        <div className="bg-navy-900 p-6 rounded-[8px] text-center max-w-3xl mx-auto">
+      <section className="relative py-32 px-6 md:px-12 mt-12 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <motion.img 
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            src={ctaImg}
+            alt="Clinic Interior"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy-900/80 mix-blend-multiply" />
+        </div>
+        
+        <div className="relative z-10 text-center max-w-3xl mx-auto">
           <motion.h4 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-[18px] text-white mb-3"
+            className="font-serif text-3xl md:text-4xl text-white mb-8"
           >
             Ready to reclaim your strength?
           </motion.h4>
@@ -98,7 +112,7 @@ export default function Therapies() {
           >
             <Link
               to="/book"
-              className="inline-flex items-center justify-center bg-sage-500 text-white px-5 py-2.5 text-[12px] rounded-[4px] uppercase font-bold transition-colors hover:bg-sage-600"
+              className="inline-flex items-center justify-center bg-sage-500 text-white px-8 py-4 text-sm rounded-sm uppercase tracking-[1px] font-medium transition-all hover:bg-sage-600 shadow-xl shadow-navy-900/40"
             >
               Book Your Consultation
             </Link>
