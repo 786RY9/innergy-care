@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import logoUrl from "../assets/logo.jpeg";
+import logoUrl from "../assets/logo2.jpeg";
 
 export default function Layout() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,7 +40,7 @@ export default function Layout() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-navy-900 uppercase flex items-center gap-4">
-            <img src={logoUrl} alt="Innergy Care" className="h-10 w-auto rounded-md" />
+            <img src={logoUrl} alt="Innergy Care" className="h-14 w-auto rounded-md" />
             Innergy Care
           </Link>
 
@@ -108,7 +108,7 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="text-[24px] font-serif font-bold tracking-[3px] text-white uppercase mb-6 flex items-center gap-4">
-              <img src={logoUrl} alt="Innergy Care" className="h-10 w-auto bg-white rounded-md p-1" />
+              <img src={logoUrl} alt="Innergy Care" className="h-14 w-auto bg-white rounded-md p-1" />
               Innergy Care
             </Link>
             <p className="text-gray-400 max-w-sm text-sm leading-relaxed font-light">

@@ -129,7 +129,7 @@ export default function Philosophy() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-[10px] uppercase tracking-[2.5px] text-gold-400 font-semibold"
                   >
-                    Advanced Diagnostics
+                    Advance Longevity Protocol
                   </motion.span>
                 </div>
 

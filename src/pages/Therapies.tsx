@@ -1,45 +1,55 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { ArrowRight, Dna, Zap, FlaskConical, Apple, Sun, Wind } from "lucide-react";
 import ctaImg from "../assets/image1.jpeg";
-import { ArrowRight, Dna, Zap, FlaskConical, Apple } from "lucide-react";
 
 export default function Therapies() {
   const therapies = [
     {
+      title: "Red Light Therapy",
+      description: "Non-invasive, light-based therapy that uses specific wavelengths to stimulate cellular repair, enhance collagen production, and reduce inflammation, supporting skin rejuvenation, tissue healing, and overall recovery.",
+      icon: <Sun size={28} className="text-sage-600" />,
+    },
+    {
+      title: "Therapeutic Leg Compression",
+      description: "Dynamic compression therapy using rhythmic air pressure to enhance circulation, support efficient oxygen and nutrient delivery, and promote the removal of metabolic waste—accelerating recovery, reducing muscle soreness, and minimizing inflammation.",
+      icon: <Wind size={28} className="text-sage-600" />,
+    },
+    {
       title: "Metabolic & Cellular Care",
       description: "Improving how your body functions at a cellular level to support resilience, energy production, and overall metabolic flexibility.",
-      icon: <Dna size={32} className="text-sage-600" />
+      icon: <Dna size={28} className="text-sage-600" />,
     },
     {
       title: "Vagus Nerve Stimulation",
       description: "Advanced neurological therapies to restore energy, balance the nervous system, and promote deep recovery and stress resilience.",
-      icon: <Zap size={32} className="text-sage-600" />
+      icon: <Zap size={28} className="text-sage-600" />,
     },
     {
       title: "Targeted Peptides",
       description: "Precision, science-driven medicine utilizing specific amino acid sequences to optimize your biological balance and tissue repair.",
-      icon: <FlaskConical size={32} className="text-sage-600" />
+      icon: <FlaskConical size={28} className="text-sage-600" />,
     },
     {
       title: "Foundational Strategies",
       description: "Optimized nutrition, structured exercise, and sleep architecture interventions designed for a longer, healthier, and more vibrant life.",
-      icon: <Apple size={32} className="text-sage-600" />
-    }
+      icon: <Apple size={28} className="text-sage-600" />,
+    },
   ];
 
   return (
     <div className="pt-32 bg-soft-cream min-h-screen flex flex-col">
       {/* Header Component */}
       <section className="px-6 md:px-12 max-w-4xl mx-auto text-center mb-20">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl lg:text-6xl font-serif text-navy-900 leading-tight mb-6"
         >
-          Targeted Therapies & Interventions
+          Targeted Therapies &amp; Interventions
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -82,7 +92,7 @@ export default function Therapies() {
       {/* Bottom Call-to-Action Banner */}
       <section className="relative py-32 px-6 md:px-12 mt-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <motion.img 
+          <motion.img
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -93,9 +103,9 @@ export default function Therapies() {
           />
           <div className="absolute inset-0 bg-navy-900/80 mix-blend-multiply" />
         </div>
-        
+
         <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <motion.h4 
+          <motion.h4
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

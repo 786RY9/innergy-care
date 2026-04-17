@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Brain, HeartPulse, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import heroImg from "../assets/image1.jpeg";
+import heroImg from "../assets/premium_photo.avif";
 import approachImg from "../assets/image2.jpg";
 
 const containerVariants = {
@@ -75,15 +75,17 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="lg:col-span-6 relative h-[500px] lg:h-[700px] w-full mt-10 lg:mt-0"
           >
-            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl bg-white">
+            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
               <motion.img
                 initial={{ scale: 1.05 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 2, ease: "easeOut" }}
                 src={heroImg}
-                alt="Premium wellness treatment"
-                className="w-full h-full object-contain p-4"
+                alt="Active wellness lifestyle at Innergy Care"
+                className="w-full h-full object-cover"
               />
+              {/* Subtle gradient overlay for visual depth */}
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-soft-cream/10" />
             </div>
 
             {/* Floating Element */}
@@ -173,6 +175,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Split Content Block */}
       <section className="py-24 px-6 md:px-12 bg-navy-900 text-white overflow-hidden">
