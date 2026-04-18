@@ -130,11 +130,11 @@ export default function Layout() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-sage-400 mb-6">Contact</h4>
             <ul className="flex flex-col gap-4 text-sm text-gray-400">
-              <li>123 Wellness Avenue</li>
-              <li>Suite 400</li>
-              <li>New York, NY 10001</li>
-              <li className="mt-2">Innergyhealth1@gmail.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>2335 Tamiami Trl N</li>
+              <li>Suite 208</li>
+              <li>Naples, FL 34103</li>
+              <li className="mt-2"><a href="mailto:innergyhealth1@gmail.com" className="hover:text-white transition-colors">innergyhealth1@gmail.com</a></li>
+              <li><a href="tel:+17866181808" className="hover:text-white transition-colors">(786) 618-1808</a></li>
             </ul>
           </div>
         </div>
