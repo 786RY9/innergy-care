@@ -135,7 +135,6 @@ export default defineConfig({
         match: { include: "homepage" },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: () => "/",
         },
         fields: [
           // Hero Section
@@ -282,7 +281,6 @@ export default defineConfig({
         match: { include: "philosophy" },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: () => "/philosophy",
         },
         fields: [
           {
@@ -381,7 +379,6 @@ export default defineConfig({
         match: { include: "therapies" },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: () => "/therapies",
         },
         fields: [
           {
@@ -464,7 +461,6 @@ export default defineConfig({
         match: { include: "bookPage" },
         ui: {
           allowedActions: { create: false, delete: false },
-          router: () => "/book",
         },
         fields: [
           {

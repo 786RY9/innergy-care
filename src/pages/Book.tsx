@@ -1,20 +1,10 @@
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useTina } from "tinacms/dist/react";
-import { useTinaData } from "../lib/useTinaData";
-import staticData from "../../content/bookPage.json";
+import bookPageData from "../../content/bookPage.json";
 import settings from "../../content/settings.json";
 
 export default function Book() {
-  const tinaResponse = useTinaData("bookPage", "bookPage.json");
-
-  const { data } = useTina(tinaResponse || ({
-    query: "",
-    variables: {},
-    data: { bookPage: staticData }
-  } as any));
-
-  const d = (data as any).bookPage;
+  const d = bookPageData;
   const s = settings;
 
   return (

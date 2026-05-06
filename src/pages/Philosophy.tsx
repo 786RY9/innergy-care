@@ -1,18 +1,8 @@
 import { motion } from "motion/react";
-import { useTina } from "tinacms/dist/react";
-import { useTinaData } from "../lib/useTinaData";
-import staticData from "../../content/philosophy.json";
+import philosophyData from "../../content/philosophy.json";
 
 export default function Philosophy() {
-  const tinaResponse = useTinaData("philosophy", "philosophy.json");
-
-  const { data } = useTina(tinaResponse || ({
-    query: "",
-    variables: {},
-    data: { philosophy: staticData }
-  } as any));
-
-  const d = (data as any).philosophy;
+  const d = philosophyData;
 
   return (
     <div className="pt-32 pb-24 bg-soft-white min-h-screen">

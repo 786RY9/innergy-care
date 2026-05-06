@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, Dna, Zap, FlaskConical, Apple, Sun, Wind, Activity, Brain, HeartPulse, type LucideProps } from "lucide-react";
-import { useTina } from "tinacms/dist/react";
-import { useTinaData } from "../lib/useTinaData";
-import staticData from "../../content/therapies.json";
+import therapiesData from "../../content/therapies.json";
 
 // Icon lookup — maps icon name strings stored in JSON to Lucide components.
 // Add new icons here if you expand the list in tina/config.ts options.
@@ -14,15 +12,7 @@ const iconMap: Record<string, IconComponent> = {
 };
 
 export default function Therapies() {
-  const tinaResponse = useTinaData("therapies", "therapies.json");
-
-  const { data } = useTina(tinaResponse || ({
-    query: "",
-    variables: {},
-    data: { therapies: staticData }
-  } as any));
-
-  const d = (data as any).therapies;
+  const d = therapiesData;
 
   return (
     <div className="pt-32 bg-soft-cream min-h-screen flex flex-col">

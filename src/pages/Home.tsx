@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Brain, HeartPulse, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import { useTina } from "tinacms/dist/react";
-import { useTinaData } from "../lib/useTinaData";
-import staticData from "../../content/homepage.json";
+import homepageData from "../../content/homepage.json";
 
 // Icon lookup — maps icon name strings (stored in JSON) to Lucide components.
 // This lets the client pick icons via the CMS dropdown without touching code.
@@ -28,17 +26,7 @@ const itemVariants = {
 };
 
 export default function Home() {
-  const tinaResponse = useTinaData("homepage", "homepage.json");
-
-  // Fallback to static data immediately, preventing a loading flash.
-  // Once tinaResponse resolves, useTina connects to the CMS.
-  const { data } = useTina(tinaResponse || ({
-    query: "",
-    variables: {},
-    data: { homepage: staticData }
-  } as any));
-
-  const d = (data as any).homepage;
+  const d = homepageData;
 
   return (
     <div className="pt-20">
