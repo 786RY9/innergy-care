@@ -1,31 +1,8 @@
-import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { useTina } from "tinacms/dist/react";
-import { tinaField } from "tinacms/dist/react";
-import { client } from "../../tina/__generated__/client";
-import type { PhilosophyQuery } from "../../tina/__generated__/types";
-import philosophyJson from "../../content/philosophy.json";
+import philosophyData from "../../content/philosophy.json";
 
 export default function Philosophy() {
-  const [tinaProps, setTinaProps] = useState<{
-    data: { philosophy: PhilosophyQuery["philosophy"] };
-    query: string;
-    variables: object;
-  }>({
-    data: { philosophy: philosophyJson as PhilosophyQuery["philosophy"] },
-    query: "",
-    variables: {},
-  });
-
-  useEffect(() => {
-    client.queries
-      .philosophy({ relativePath: "philosophy.json" })
-      .then((res) => setTinaProps(res as typeof tinaProps))
-      .catch(() => {});
-  }, []);
-
-  const { data } = useTina(tinaProps) as { data: { philosophy: PhilosophyQuery["philosophy"] } };
-  const d = data.philosophy;
+  const d = philosophyData;
 
   return (
     <div className="pt-32 pb-24 bg-soft-white min-h-screen">
@@ -36,10 +13,9 @@ export default function Philosophy() {
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2, ease: "easeOut" }}
-            src={d.heroImage ?? ""}
-            alt={d.heroImageAlt ?? ""}
+            src={d.heroImage}
+            alt={d.heroImageAlt}
             className="w-full h-full object-cover"
-            data-tina-field={tinaField(d, "heroImage")}
           />
           <div className="absolute inset-0 bg-navy-900/70 mix-blend-multiply" />
         </div>
@@ -50,7 +26,6 @@ export default function Philosophy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6"
-            data-tina-field={tinaField(d, "heroHeadline")}
           >
             {d.heroHeadline}
           </motion.h1>
@@ -59,7 +34,6 @@ export default function Philosophy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-xl md:text-2xl text-sage-300 font-serif italic"
-            data-tina-field={tinaField(d, "heroSubtitle")}
           >
             {d.heroSubtitle}
           </motion.p>
@@ -75,7 +49,6 @@ export default function Philosophy() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="bg-sage-300 p-6 md:p-8 rounded-[8px] border-l-4 border-sage-600 text-[14px] leading-[1.5] text-sage-600 text-left"
-            data-tina-field={tinaField(d, "missionQuote")}
           >
             &ldquo;{d.missionQuote}&rdquo;
           </motion.blockquote>
@@ -91,16 +64,13 @@ export default function Philosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2
-              className="text-4xl md:text-5xl font-serif text-navy-900 mb-8"
-              data-tina-field={tinaField(d, "rootCauseHeading")}
-            >
+            <h2 className="text-4xl md:text-5xl font-serif text-navy-900 mb-8">
               {d.rootCauseHeading}
             </h2>
             <div className="space-y-6 text-lg text-navy-700 leading-relaxed">
-              <p data-tina-field={tinaField(d, "rootCauseParagraph1")}>{d.rootCauseParagraph1}</p>
-              <p data-tina-field={tinaField(d, "rootCauseParagraph2")}>{d.rootCauseParagraph2}</p>
-              <p data-tina-field={tinaField(d, "rootCauseParagraph3")}>{d.rootCauseParagraph3}</p>
+              <p>{d.rootCauseParagraph1}</p>
+              <p>{d.rootCauseParagraph2}</p>
+              <p>{d.rootCauseParagraph3}</p>
             </div>
           </motion.div>
 
@@ -111,19 +81,21 @@ export default function Philosophy() {
             transition={{ duration: 0.8 }}
             className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl group"
           >
+            {/* Background image with ken-burns */}
             <motion.img
               initial={{ scale: 1.08 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.8, ease: "easeOut" }}
-              src={d.rootCauseImage ?? ""}
-              alt={d.rootCauseImageAlt ?? ""}
+              src={d.rootCauseImage}
+              alt={d.rootCauseImageAlt}
               className="w-full h-full object-cover scale-110"
-              data-tina-field={tinaField(d, "rootCauseImage")}
             />
 
+            {/* Deep gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/50 to-navy-900/10" />
 
+            {/* Pillar badges */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -138,6 +110,7 @@ export default function Philosophy() {
               <span className="text-[9px] uppercase tracking-[2px] text-white font-semibold">Personalized</span>
             </motion.div>
 
+            {/* Glassmorphism text panel */}
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <div className="bg-navy-900/20 backdrop-blur-md border border-white/10 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -148,7 +121,6 @@ export default function Philosophy() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-[10px] uppercase tracking-[2.5px] text-gold-400 font-semibold"
-                    data-tina-field={tinaField(d, "overlayProtocolLabel")}
                   >
                     {d.overlayProtocolLabel}
                   </motion.span>
@@ -161,11 +133,8 @@ export default function Philosophy() {
                   transition={{ duration: 0.7, delay: 0.4 }}
                   className="font-serif text-4xl md:text-5xl text-white leading-tight mb-3"
                 >
-                  <span data-tina-field={tinaField(d, "overlayHeadline")}>{d.overlayHeadline}</span>
-                  <br />
-                  <span className="italic text-sage-300" data-tina-field={tinaField(d, "overlayHeadlineEmphasis")}>
-                    {d.overlayHeadlineEmphasis}
-                  </span>
+                  {d.overlayHeadline}<br />
+                  <span className="italic text-sage-300">{d.overlayHeadlineEmphasis}</span>
                 </motion.h3>
 
                 <motion.p
@@ -174,7 +143,6 @@ export default function Philosophy() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.55 }}
                   className="text-sm text-gray-300 font-light leading-relaxed"
-                  data-tina-field={tinaField(d, "overlayBody")}
                 >
                   {d.overlayBody}
                 </motion.p>

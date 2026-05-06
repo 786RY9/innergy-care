@@ -1,49 +1,11 @@
-import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useTina, tinaField } from "tinacms/dist/react";
-import { client } from "../../tina/__generated__/client";
-import type { BookPageQuery, SettingsQuery } from "../../tina/__generated__/types";
-import bookPageJson from "../../content/bookPage.json";
-import settingsJson from "../../content/settings.json";
+import bookPageData from "../../content/bookPage.json";
+import settings from "../../content/settings.json";
 
 export default function Book() {
-  const [bookProps, setBookProps] = useState<{
-    data: { bookPage: BookPageQuery["bookPage"] };
-    query: string;
-    variables: object;
-  }>({
-    data: { bookPage: bookPageJson as BookPageQuery["bookPage"] },
-    query: "",
-    variables: {},
-  });
-
-  const [settingsProps, setSettingsProps] = useState<{
-    data: { settings: SettingsQuery["settings"] };
-    query: string;
-    variables: object;
-  }>({
-    data: { settings: settingsJson as SettingsQuery["settings"] },
-    query: "",
-    variables: {},
-  });
-
-  useEffect(() => {
-    client.queries
-      .bookPage({ relativePath: "bookPage.json" })
-      .then((res) => setBookProps(res as typeof bookProps))
-      .catch(() => {});
-
-    client.queries
-      .settings({ relativePath: "settings.json" })
-      .then((res) => setSettingsProps(res as typeof settingsProps))
-      .catch(() => {});
-  }, []);
-
-  const { data: bookData } = useTina(bookProps) as { data: { bookPage: BookPageQuery["bookPage"] } };
-  const { data: settingsData } = useTina(settingsProps) as { data: { settings: SettingsQuery["settings"] } };
-  const d = bookData.bookPage;
-  const s = settingsData.settings;
+  const d = bookPageData;
+  const s = settings;
 
   return (
     <div className="pt-32 pb-24 bg-soft-cream min-h-screen px-6 md:px-12">
@@ -58,24 +20,13 @@ export default function Book() {
         >
           <div className="flex items-center justify-center gap-3 mb-5">
             <div className="w-8 h-px bg-gold-500" />
-            <span
-              className="text-[10px] uppercase tracking-[3px] text-gold-500 font-semibold"
-              data-tina-field={tinaField(d, "eyebrow")}
-            >
-              {d.eyebrow}
-            </span>
+            <span className="text-[10px] uppercase tracking-[3px] text-gold-500 font-semibold">{d.eyebrow}</span>
             <div className="w-8 h-px bg-gold-500" />
           </div>
-          <h1
-            className="text-4xl md:text-5xl font-serif text-navy-900 leading-tight mb-4"
-            data-tina-field={tinaField(d, "heading")}
-          >
+          <h1 className="text-4xl md:text-5xl font-serif text-navy-900 leading-tight mb-4">
             {d.heading}
           </h1>
-          <p
-            className="text-navy-700 font-light text-lg max-w-xl mx-auto leading-relaxed"
-            data-tina-field={tinaField(d, "subheading")}
-          >
+          <p className="text-navy-700 font-light text-lg max-w-xl mx-auto leading-relaxed">
             {d.subheading}
           </p>
         </motion.div>
@@ -95,24 +46,9 @@ export default function Book() {
               <Phone size={20} />
             </div>
             <div>
-              <p
-                className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1"
-                data-tina-field={tinaField(d, "phoneCardLabel")}
-              >
-                {d.phoneCardLabel}
-              </p>
-              <p
-                className="text-navy-900 font-serif text-xl"
-                data-tina-field={tinaField(s, "phone")}
-              >
-                {s.phone}
-              </p>
-              <p
-                className="text-sm text-navy-700 font-light mt-1"
-                data-tina-field={tinaField(d, "phoneCardSub")}
-              >
-                {d.phoneCardSub}
-              </p>
+              <p className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1">{d.phoneCardLabel}</p>
+              <p className="text-navy-900 font-serif text-xl">{s.phone}</p>
+              <p className="text-sm text-navy-700 font-light mt-1">{d.phoneCardSub}</p>
             </div>
           </motion.a>
 
@@ -128,30 +64,15 @@ export default function Book() {
               <Mail size={20} />
             </div>
             <div>
-              <p
-                className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1"
-                data-tina-field={tinaField(d, "emailCardLabel")}
-              >
-                {d.emailCardLabel}
-              </p>
-              <p
-                className="text-navy-900 font-serif text-lg break-all"
-                data-tina-field={tinaField(s, "email")}
-              >
-                {s.email}
-              </p>
-              <p
-                className="text-sm text-navy-700 font-light mt-1"
-                data-tina-field={tinaField(d, "emailCardSub")}
-              >
-                {d.emailCardSub}
-              </p>
+              <p className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1">{d.emailCardLabel}</p>
+              <p className="text-navy-900 font-serif text-lg break-all">{s.email}</p>
+              <p className="text-sm text-navy-700 font-light mt-1">{d.emailCardSub}</p>
             </div>
           </motion.a>
 
           {/* Address */}
           <motion.a
-            href={s.mapsUrl ?? "#"}
+            href={s.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
@@ -163,18 +84,11 @@ export default function Book() {
               <MapPin size={20} />
             </div>
             <div>
-              <p
-                className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1"
-                data-tina-field={tinaField(d, "addressCardLabel")}
-              >
-                {d.addressCardLabel}
-              </p>
+              <p className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1">{d.addressCardLabel}</p>
               <p className="text-navy-900 font-serif text-lg leading-snug">
-                <span data-tina-field={tinaField(s, "addressLine1")}>{s.addressLine1}</span>
-                <br />
-                <span data-tina-field={tinaField(s, "addressLine2")}>{s.addressLine2}</span>
-                <br />
-                <span data-tina-field={tinaField(s, "addressCityStateZip")}>{s.addressCityStateZip}</span>
+                {s.addressLine1}<br />
+                {s.addressLine2}<br />
+                {s.addressCityStateZip}
               </p>
             </div>
           </motion.a>
@@ -190,24 +104,9 @@ export default function Book() {
               <Clock size={20} />
             </div>
             <div>
-              <p
-                className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1"
-                data-tina-field={tinaField(d, "appointmentCardLabel")}
-              >
-                {d.appointmentCardLabel}
-              </p>
-              <p
-                className="text-navy-900 font-serif text-lg"
-                data-tina-field={tinaField(d, "appointmentCardValue")}
-              >
-                {d.appointmentCardValue}
-              </p>
-              <p
-                className="text-sm text-navy-700 font-light mt-1"
-                data-tina-field={tinaField(d, "appointmentCardSub")}
-              >
-                {d.appointmentCardSub}
-              </p>
+              <p className="text-[11px] uppercase tracking-[2px] text-sage-600 font-semibold mb-1">{d.appointmentCardLabel}</p>
+              <p className="text-navy-900 font-serif text-lg">{d.appointmentCardValue}</p>
+              <p className="text-sm text-navy-700 font-light mt-1">{d.appointmentCardSub}</p>
             </div>
           </motion.div>
 
@@ -219,7 +118,6 @@ export default function Book() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-sm text-navy-600 font-light"
-          data-tina-field={tinaField(d, "footerNote")}
         >
           {d.footerNote}
         </motion.p>
