@@ -1,0 +1,97 @@
+fragment SettingsParts on Settings {
+  __typename
+  siteName
+  logoImage
+  ctaButtonLabel
+  footerTagline
+  footerCopyright
+  phone
+  phoneHref
+  email
+  addressLine1
+  addressLine2
+  addressCityStateZip
+  mapsUrl
+}
+
+fragment HomepageParts on Homepage {
+  __typename
+  heroEyebrow
+  heroHeadline
+  heroHeadlineEmphasis
+  heroHeadlineSuffix
+  heroSubheading
+  heroCta1Label
+  heroCta2Label
+  heroImage
+  heroImageAlt
+  heroBadgeLabelTop
+  heroBadgeLabelBottom
+  featureSectionHeading
+  features {
+    __typename
+    title
+    description
+    icon
+  }
+  approachImage
+  approachImageAlt
+  approachEyebrow
+  approachHeading
+  approachParagraph1
+  approachParagraph2
+  approachLinkLabel
+}
+
+fragment PhilosophyParts on Philosophy {
+  __typename
+  heroImage
+  heroImageAlt
+  heroHeadline
+  heroSubtitle
+  missionQuote
+  rootCauseHeading
+  rootCauseParagraph1
+  rootCauseParagraph2
+  rootCauseParagraph3
+  rootCauseImage
+  rootCauseImageAlt
+  overlayProtocolLabel
+  overlayHeadline
+  overlayHeadlineEmphasis
+  overlayBody
+}
+
+fragment TherapiesParts on Therapies {
+  __typename
+  pageHeading
+  pageSubheading
+  cardBlockTitle
+  cardBlockSubtitle
+  ctaBannerImage
+  ctaBannerImageAlt
+  ctaBannerHeadline
+  ctaBannerButtonLabel
+  therapyList {
+    __typename
+    title
+    description
+    icon
+  }
+}
+
+fragment BookPageParts on BookPage {
+  __typename
+  eyebrow
+  heading
+  subheading
+  phoneCardLabel
+  phoneCardSub
+  emailCardLabel
+  emailCardSub
+  addressCardLabel
+  appointmentCardLabel
+  appointmentCardValue
+  appointmentCardSub
+  footerNote
+}

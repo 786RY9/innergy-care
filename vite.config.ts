@@ -15,6 +15,8 @@ export default defineConfig(({mode}) => {
     },
     server: {
       hmr: true,
+      // Serve index.html for all routes so BrowserRouter works in dev
+      historyApiFallback: true,
     },
   };
 });

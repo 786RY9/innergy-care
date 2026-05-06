@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+# TinaCMS local content cache (auto-generated, do not commit)
+.tina/cache

@@ -1,8 +1,16 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Brain, HeartPulse, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import heroImg from "../assets/premium_photo.avif";
-import approachImg from "../assets/image2.jpg";
+import homepageData from "../../content/homepage.json";
+
+// Icon lookup — maps icon name strings (stored in JSON) to Lucide components.
+// This lets the client pick icons via the CMS dropdown without touching code.
+const iconMap: Record<string, React.ReactNode> = {
+  Activity: <Activity size={24} />,
+  Brain: <Brain size={24} />,
+  HeartPulse: <HeartPulse size={24} />,
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -18,6 +26,8 @@ const itemVariants = {
 };
 
 export default function Home() {
+  const d = homepageData;
+
   return (
     <div className="pt-20">
       {/* Luxury Hero Section */}
@@ -39,15 +49,15 @@ export default function Home() {
           >
             <motion.div variants={itemVariants} className="flex items-center gap-2 mb-6">
               <Sparkles size={16} className="text-gold-500" />
-              <span className="text-xs font-medium uppercase tracking-[2px] text-navy-700">Premium Longevity Clinic</span>
+              <span className="text-xs font-medium uppercase tracking-[2px] text-navy-700">{d.heroEyebrow}</span>
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-[64px] font-serif text-navy-900 leading-[1.1] mb-6">
-              Advanced Care Meets How You <span className="italic text-sage-600">Actually</span> Want to Feel.
+              {d.heroHeadline} <span className="italic text-sage-600">{d.heroHeadlineEmphasis}</span> {d.heroHeadlineSuffix}
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-navy-700 leading-[1.6] max-w-[520px] mb-10 font-light">
-              Living longer should also mean living better. Reclaim your strength and optimize your health through a personalized, science-driven approach.
+              {d.heroSubheading}
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5">
@@ -55,7 +65,7 @@ export default function Home() {
                 to="/book"
                 className="group relative px-8 py-4 bg-navy-900 text-white text-[13px] font-medium uppercase tracking-[1px] overflow-hidden rounded-sm flex items-center justify-center gap-3 transition-all hover:shadow-xl hover:shadow-navy-900/20"
               >
-                <span className="relative z-10">Start Your Journey</span>
+                <span className="relative z-10">{d.heroCta1Label}</span>
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-navy-800 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out" />
               </Link>
@@ -63,7 +73,7 @@ export default function Home() {
                 to="/therapies"
                 className="px-8 py-4 bg-transparent border border-navy-200 text-navy-900 text-[13px] font-medium uppercase tracking-[1px] rounded-sm hover:border-navy-900 hover:bg-navy-900/5 transition-all flex items-center justify-center"
               >
-                Explore Therapies
+                {d.heroCta2Label}
               </Link>
             </motion.div>
           </motion.div>
@@ -80,15 +90,15 @@ export default function Home() {
                 initial={{ scale: 1.05 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 2, ease: "easeOut" }}
-                src={heroImg}
-                alt="Active wellness lifestyle at Innergy Care"
+                src={d.heroImage}
+                alt={d.heroImageAlt}
                 className="w-full h-full object-cover"
               />
               {/* Subtle gradient overlay for visual depth */}
               <div className="absolute inset-0 bg-gradient-to-l from-transparent to-soft-cream/10" />
             </div>
 
-            {/* Floating Element */}
+            {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -100,8 +110,8 @@ export default function Home() {
                   <Activity size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] text-navy-700 uppercase tracking-wider font-semibold">Precision</p>
-                  <p className="text-sm font-serif text-navy-900">Cellular Care</p>
+                  <p className="text-[10px] text-navy-700 uppercase tracking-wider font-semibold">{d.heroBadgeLabelTop}</p>
+                  <p className="text-sm font-serif text-navy-900">{d.heroBadgeLabelBottom}</p>
                 </div>
               </div>
               <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
@@ -121,61 +131,31 @@ export default function Home() {
       <section className="py-32 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-navy-900 mb-4">A Foundation of Lasting Vitality</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-navy-900 mb-4">{d.featureSectionHeading}</h2>
             <div className="w-16 h-px bg-gold-500 mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
-                <Activity size={24} />
-              </div>
-              <h3 className="text-lg font-serif text-navy-900 mb-3">Metabolic Care</h3>
-              <p className="text-sm text-navy-700 leading-relaxed font-light">
-                Supporting metabolism, energy, and hormones at a cellular level to build a foundation of lasting vitality.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
-                <Brain size={24} />
-              </div>
-              <h3 className="text-lg font-serif text-navy-900 mb-3">Targeted Therapies</h3>
-              <p className="text-sm text-navy-700 leading-relaxed font-light">
-                Advanced treatments including precision peptides and vagus nerve stimulation to optimize biological balance.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
-                <HeartPulse size={24} />
-              </div>
-              <h3 className="text-lg font-serif text-navy-900 mb-3">Personalized Plans</h3>
-              <p className="text-sm text-navy-700 leading-relaxed font-light">
-                Optimized nutrition, structured exercise, and lifestyle interventions tailored to your unique physiology.
-              </p>
-            </motion.div>
+            {d.features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="flex flex-col items-center text-center group"
+              >
+                <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center text-sage-600 mb-6 group-hover:bg-sage-600 group-hover:text-white transition-colors duration-500">
+                  {iconMap[feature.icon] ?? <Activity size={24} />}
+                </div>
+                <h3 className="text-lg font-serif text-navy-900 mb-3">{feature.title}</h3>
+                <p className="text-sm text-navy-700 leading-relaxed font-light">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-
 
       {/* Split Content Block */}
       <section className="py-24 px-6 md:px-12 bg-navy-900 text-white overflow-hidden">
@@ -192,8 +172,8 @@ export default function Home() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              src={approachImg}
-              alt="Proactive Health Consultation"
+              src={d.approachImage}
+              alt={d.approachImageAlt}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-navy-900/30 mix-blend-multiply"></div>
@@ -208,22 +188,22 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-px bg-gold-500"></div>
-              <span className="text-xs font-medium uppercase tracking-[2px] text-gold-500">Our Approach</span>
+              <span className="text-xs font-medium uppercase tracking-[2px] text-gold-500">{d.approachEyebrow}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-              Proactive Health for the Future.
+              {d.approachHeading}
             </h2>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed font-light">
-              Instead of just treating illness, we focus on prevention—empowering the body to function at its highest potential.
+              {d.approachParagraph1}
             </p>
             <p className="text-lg text-gray-300 mb-10 leading-relaxed font-light">
-              Our goal is to help you feel better today while reducing your risk of chronic disease tomorrow. We bridge the gap between advanced medical science and daily wellbeing.
+              {d.approachParagraph2}
             </p>
             <Link
               to="/philosophy"
               className="group inline-flex items-center gap-3 text-gold-500 hover:text-gold-400 font-medium transition-colors text-sm uppercase tracking-wider"
             >
-              Read Our Philosophy <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              {d.approachLinkLabel} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

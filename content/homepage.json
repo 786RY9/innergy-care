@@ -1,0 +1,38 @@
+{
+  "heroEyebrow": "Premium Longevity Clinic",
+  "heroHeadline": "Advanced Care Meets How You",
+  "heroHeadlineEmphasis": "Actually",
+  "heroHeadlineSuffix": "Want to Feel.",
+  "heroSubheading": "Living longer should also mean living better. Reclaim your strength and optimize your health through a personalized, science-driven approach.",
+  "heroCta1Label": "Start Your Journey",
+  "heroCta2Label": "Explore Therapies",
+  "heroImage": "/assets/premium_photo.avif",
+  "heroImageAlt": "Active wellness lifestyle at Innergy Care",
+  "heroBadgeLabelTop": "Precision",
+  "heroBadgeLabelBottom": "Cellular Care",
+  "featureSectionHeading": "A Foundation of Lasting Vitality",
+  "features": [
+    {
+      "title": "Metabolic Care",
+      "description": "Supporting metabolism, energy, and hormones at a cellular level to build a foundation of lasting vitality.",
+      "icon": "Activity"
+    },
+    {
+      "title": "Targeted Therapies",
+      "description": "Advanced treatments including precision peptides and vagus nerve stimulation to optimize biological balance.",
+      "icon": "Brain"
+    },
+    {
+      "title": "Personalized Plans",
+      "description": "Optimized nutrition, structured exercise, and lifestyle interventions tailored to your unique physiology.",
+      "icon": "HeartPulse"
+    }
+  ],
+  "approachImage": "/assets/image2.jpg",
+  "approachImageAlt": "Proactive Health Consultation",
+  "approachEyebrow": "Our Approach",
+  "approachHeading": "Proactive Health for the Future.",
+  "approachParagraph1": "Instead of just treating illness, we focus on prevention—empowering the body to function at its highest potential.",
+  "approachParagraph2": "Our goal is to help you feel better today while reducing your risk of chronic disease tomorrow. We bridge the gap between advanced medical science and daily wellbeing.",
+  "approachLinkLabel": "Read Our Philosophy"
+}

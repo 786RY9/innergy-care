@@ -1,0 +1,42 @@
+{
+  "pageHeading": "Targeted Therapies & Interventions",
+  "pageSubheading": "Comprehensive, individualized plans utilizing advanced science and foundational lifestyle strategies.",
+  "cardBlockTitle": "Targeted Interventions",
+  "cardBlockSubtitle": "Comprehensive, individualized medical plans.",
+  "ctaBannerImage": "/assets/image1.jpeg",
+  "ctaBannerImageAlt": "Clinic Interior",
+  "ctaBannerHeadline": "Ready to reclaim your strength?",
+  "ctaBannerButtonLabel": "Book Your Consultation",
+  "therapyList": [
+    {
+      "title": "Red Light Therapy",
+      "description": "Non-invasive, light-based therapy that uses specific wavelengths to stimulate cellular repair, enhance collagen production, and reduce inflammation, supporting skin rejuvenation, tissue healing, and overall recovery.",
+      "icon": "Sun"
+    },
+    {
+      "title": "Therapeutic Leg Compression",
+      "description": "Dynamic compression therapy using rhythmic air pressure to enhance circulation, support efficient oxygen and nutrient delivery, and promote the removal of metabolic waste—accelerating recovery, reducing muscle soreness, and minimizing inflammation.",
+      "icon": "Wind"
+    },
+    {
+      "title": "Metabolic & Cellular Care",
+      "description": "Improving how your body functions at a cellular level to support resilience, energy production, and overall metabolic flexibility.",
+      "icon": "Dna"
+    },
+    {
+      "title": "Vagus Nerve Stimulation",
+      "description": "Advanced neurological therapies to restore energy, balance the nervous system, and promote deep recovery and stress resilience.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Targeted Peptides",
+      "description": "Precision, science-driven medicine utilizing specific amino acid sequences to optimize your biological balance and tissue repair.",
+      "icon": "FlaskConical"
+    },
+    {
+      "title": "Foundational Strategies",
+      "description": "Optimized nutrition, structured exercise, and sleep architecture interventions designed for a longer, healthier, and more vibrant life.",
+      "icon": "Apple"
+    }
+  ]
+}
