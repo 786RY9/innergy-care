@@ -9,6 +9,11 @@
   "ctaBannerButtonLabel": "Book Your Consultation",
   "therapyList": [
     {
+      "title": "7 Day Cortisol Reset Challenge ",
+      "description": "This Challenge will be held several times a year. The next challenge is June 15-June 21\nMessage us to register for this event. ",
+      "icon": "Activity"
+    },
+    {
       "title": "Foundational Strategies",
       "description": "Optimized nutrition, structured exercise, and sleep architecture interventions designed for a longer, healthier, and more vibrant life.",
       "icon": "Apple"
@@ -37,11 +42,6 @@
       "title": "Vagus Nerve Stimulation",
       "description": "Advanced neurological therapies to restore energy, balance the nervous system, and promote deep recovery and stress resilience.",
       "icon": "Zap"
-    },
-    {
-      "title": "7 Day Cortisol Reset Challenge ",
-      "description": "This Challenge will be held several times a year. The next challenge is June 15-June 21\nMessage us to register for this event. ",
-      "icon": "Activity"
     }
   ]
 }
