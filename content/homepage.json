@@ -13,6 +13,11 @@
   "featureSectionHeading": "A Foundation of Lasting Vitality",
   "features": [
     {
+      "title": "7 Day Cortisol Reset Challenge",
+      "description": "Cortisol is a hormone produced by your adrenal glands in response to stress. It plays a key role in regulating your energy, metabolism, immune function, sleep cycle and inflammation. When cortisol is balanced, you feel energized, focused, and resilient. When it's not, it can lead to fatigue, weight gain, poor sleep, anxiety, burnout and other health problems. Join us for a cortisol reset challenge on June 15 - 21. This is self directed and involves small daily actions BUT yielding big results. I will provide support via IG at shawnking.Naples. This is a free event and will be offered several times a year. EMAIL us to register. ",
+      "icon": "Activity"
+    },
+    {
       "title": "Metabolic Care",
       "description": "Supporting metabolism, energy, and hormones at a cellular level to build a foundation of lasting vitality.",
       "icon": "Activity"
@@ -26,11 +31,6 @@
       "title": "Personalized Plans",
       "description": "Optimized nutrition, structured exercise, and lifestyle interventions tailored to your unique physiology.",
       "icon": "HeartPulse"
-    },
-    {
-      "title": "7 Day Cortisol Reset Challenge",
-      "description": "Cortisol is a hormone produced by your adrenal glands in response to stress. It plays a key role in regulating your energy, metabolism, immune function, sleep cycle and inflammation. When cortisol is balanced, you feel energized, focused, and resilient. When it's not, it can lead to fatigue, weight gain, poor sleep, anxiety, burnout and other health problems. Join us for a cortisol reset challenge on June 15 - 21. This is self directed and involves small daily actions BUT yielding big results. I will provide support via IG at shawnking.Naples. This is a free event and will be offered several times a year. EMAIL us to register. ",
-      "icon": "Activity"
     }
   ],
   "approachImage": "/assets/image2.jpg",
